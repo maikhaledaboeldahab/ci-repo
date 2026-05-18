@@ -4,6 +4,8 @@ jobs:
     list-files:
         runs-on : ubuntu-latest
         steps:
+            - name : checkout uses
+              uses: actions/checkout@v6
             - name: list files
               run : ls
             - name: read repo
