@@ -1,0 +1,14 @@
+name : hello team
+on : push
+jobs:
+    execute-file: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v6
+            
+            - name: Give execute permission
+              run: chmod +x hello.sh
+
+            - name: Run script
+              run: ./hello.sh
