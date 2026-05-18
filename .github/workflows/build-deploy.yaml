@@ -10,5 +10,7 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         steps:
+            - name : checkout uses
+              uses: actions/checkout@v6
             - name: reding file
               run: cat app.txt
