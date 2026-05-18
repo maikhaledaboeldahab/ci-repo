@@ -1,0 +1,14 @@
+name : buid-deploy 
+on : push
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: creating file
+              run: touch app.txt
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: reding file
+              run: cat app.txt
