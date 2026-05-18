@@ -7,7 +7,10 @@ jobs:
             - name: creating file
               run: touch app.txt
             - name: upload
-              uses: actions/upload-artifact@v7
+              uses: actions/upload-artifact@v4
+              with:
+                name: my-file
+                path: app.txt
     deploy:
         needs: build
         runs-on: ubuntu-latest
@@ -15,6 +18,9 @@ jobs:
             - name : checkout uses
               uses: actions/checkout@v6
             - name : download
-              uses: actions/download-artifact@v8
+              uses: actions/download-artifact@v4
+              with:
+                name: my-file
+                
             - name: reding file
               run: cat app.txt
