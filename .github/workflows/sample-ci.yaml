@@ -1,0 +1,11 @@
+name: first workflow
+on: push
+jobs:
+    list-files:
+        runs-on : ubuntu-latest
+        steps:
+            - name: list files
+              run : ls
+            - name: read repo
+              run : cat README.md
+
