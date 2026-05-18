@@ -4,6 +4,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
+            - name: upload
+              uses: actions/upload-artifact@v7
             - name: creating file
               run: touch app.txt
     deploy:
@@ -12,5 +14,7 @@ jobs:
         steps:
             - name : checkout uses
               uses: actions/checkout@v6
+            - name : download
+              uses: actions/download-artifact@v8
             - name: reding file
               run: cat app.txt
